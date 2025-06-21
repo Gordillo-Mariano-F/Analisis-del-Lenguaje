@@ -1,0 +1,73 @@
+a. ¿Cuántas variables tiene G? 
+ -Variables: R, S, T, X → 4
+
+b. ¿Cuántos terminales tiene G? 
+ -Terminales: a, b → 2
+
+c. ¿Cuál es el símbolo inicial de G? 
+ -Símbolo inicial: R
+
+d. Dar tres cadenas en L(G):
+
+ab (R → S → a T b → a ε b).
+
+baa (R → S → b T a → b X a → b a a).
+
+aababa (esta en el final 😊).
+
+e. Dar la cadena mínima posible:
+
+ab o ba (ambas de longitud 2, derivadas desde S con T → ε).
+
+
+f. V o F: T ⇒ aba.
+Falso. T no puede derivar aba en un solo paso.
+
+g. V o F: T ⇒∗ aba.
+Verdadero. Ejemplo: T → X T X → a T a → a X a → a b a
+
+h. V o F: T ⇒ T.
+Falso. No hay una producción directa T → T.
+
+i. V o F: T ⇒∗ T. 
+Falso. T no vuelve a sí misma sin generar terminales.
+
+j. V o F: XXX ⇒∗ aba. 
+Verdadero. X X X → a b a, ya que X → a o b.
+
+k. V o F: X ⇒∗ aba. 
+Falso. X solo deriva en a o b.
+
+l. V o F: T ⇒∗ XX.
+Verdadero. T → X T X → X X X, y se puede elegir derivar solo dos X.
+
+m. V ́o F: T ⇒∗ XXX. 
+Verdadero. T → X T X → X X X.
+
+n. V o F: S ⇒∗ ε. 
+Falso. S siempre incluye terminales a y b, así que nunca deriva en vacío.
+
+ñ. Describa en español el lenguaje L(G).
+
+R ⇒ X R X 
+  ⇒ a S a 
+  ⇒ a a T b a 
+  ⇒ a a X T X b a 
+  ⇒ a a b ε a b a
+
+
+o.Árbol de derivación: cadena aababa
+
+            R
+         /  |  \              
+        X   R   X            
+      /     |     \        
+     a      S       a      
+         /  |  \         
+       a    T    b        
+         /  |  \             
+        X   T   X              
+       /    |    \       
+      b     ε     a         
+
+rpt:aababa
